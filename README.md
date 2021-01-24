@@ -8,7 +8,7 @@ Author: Kaku([@7mA](https://github.com/7mA))
 
 - **Vec**: 向量类
 - **Ray**: 线段类
-- **PointView**: 视点类
+- **ViewPoint**: 视点类
 
 ## API文档
 [https://7ma.github.io/linear-algebra-js-lib/](https://7ma.github.io/linear-algebra-js-lib/)

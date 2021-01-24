@@ -1,5 +1,7 @@
 /**
  * 向量类
+ * @prop {number} x 向量横坐标
+ * @prop {number} y 向量纵坐标
  */
 class Vec {
 
@@ -63,6 +65,8 @@ class Vec {
 
 /**
  * 线段类
+ * @prop {Vec} pos 线段起点的位置向量
+ * @prop {Vec} way 线段的方向向量
  */
 class Ray {
 
@@ -89,8 +93,8 @@ class Ray {
 
    /**
     * 线段起点的位置向量
-    * @accessors
-    * @return {Vec} 线段起点的位置向量
+    * @type {Vec}
+    * @readonly
     */
    get begin(){
      return this.pos;
@@ -98,8 +102,8 @@ class Ray {
 
    /**
     * 线段终点的位置向量
-    * @accessors
-    * @return {Vec} 线段终点的位置向量
+    * @type {Vec}
+    * @readonly
     */
    get end(){
      return this.pos.add(this.way);
@@ -138,14 +142,16 @@ class Ray {
 
 /**
  * 视点类
+ * @prop {Vec} pos 视点位置向量
+ * @prop {number} angle 视线方向角度（弧度制）
  */
-class PointView {
+class ViewPoint {
 
   /**
    * 构建视点对象
    * @param {Vec} pos 视点位置向量
    * @param {number} angle 视线方向角度（弧度制）
-   * @return {PointView} 视点对象
+   * @return {ViewPoint} 视点对象
    */
   constructor(pos, angle){
     this.pos = pos;

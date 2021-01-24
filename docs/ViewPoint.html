@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Class: PointView | Class: PointView</title>
+    <title>Class: ViewPoint | Class: ViewPoint</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -24,7 +24,7 @@
         
     </div>
     <div class="title">
-        <h1><a href="index.html" class="link">Class: PointView</a></h1>
+        <h1><a href="index.html" class="link">Class: ViewPoint</a></h1>
         
     </div>
     <div class="search-container" id="search-container">
@@ -32,7 +32,7 @@
         <ul></ul>
     </div>
     
-    <div class="lnb-api hidden"><h3>Classes</h3><ul><li><a href="PointView.html">PointView</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="PointView_sub"></div></li><li><a href="Ray.html">Ray</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="Ray_sub"><div class="member-type">Members</div><ul class="inner"><li><a href="Ray.html#begin">begin</a></li><li><a href="Ray.html#end">end</a></li></ul><div class="member-type">Methods</div><ul class="inner"><li><a href="Ray.html#.getRayFromPoints">getRayFromPoints</a></li><li><a href="Ray.html#intersection">intersection</a></li></ul></div></li><li><a href="Vec.html">Vec</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="Vec_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="Vec.html#add">add</a></li><li><a href="Vec.html#copy">copy</a></li><li><a href="Vec.html#mag">mag</a></li><li><a href="Vec.html#multi">multi</a></li><li><a href="Vec.html#sub">sub</a></li></ul></div></li></ul></div>
+    <div class="lnb-api hidden"><h3>Classes</h3><ul><li><a href="Ray.html">Ray</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="Ray_sub"><div class="member-type">Members</div><ul class="inner"><li><a href="Ray.html#begin">begin</a></li><li><a href="Ray.html#end">end</a></li></ul><div class="member-type">Methods</div><ul class="inner"><li><a href="Ray.html#.getRayFromPoints">getRayFromPoints</a></li><li><a href="Ray.html#intersection">intersection</a></li></ul></div></li><li><a href="Vec.html">Vec</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="Vec_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="Vec.html#add">add</a></li><li><a href="Vec.html#copy">copy</a></li><li><a href="Vec.html#mag">mag</a></li><li><a href="Vec.html#multi">multi</a></li><li><a href="Vec.html#sub">sub</a></li></ul></div></li><li><a href="ViewPoint.html">ViewPoint</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="ViewPoint_sub"></div></li></ul></div>
 </nav>
 <div id="resizer"></div>
 
@@ -46,7 +46,7 @@
 
 <header>
     
-        <h2><span class="attribs"><span class="type-signature"></span></span>PointView<span class="signature">(pos, angle)</span><span class="type-signature"> &rarr; {<a href="PointView.html">PointView</a>}</span></h2>
+        <h2><span class="attribs"><span class="type-signature"></span></span>ViewPoint<span class="signature">(pos, angle)</span><span class="type-signature"> &rarr; {<a href="ViewPoint.html">ViewPoint</a>}</span></h2>
         
             <div class="class-description">视点类</div>
         
@@ -61,14 +61,14 @@
 
 <dt>
     
-        <h4 class="name" id="PointView">
+        <h4 class="name" id="ViewPoint">
             
-                new <span class="type-signature"></span>PointView<span class="signature">(pos, angle)</span><span class="type-signature"> &rarr; {<a href="PointView.html">PointView</a>}</span>
+                new <span class="type-signature"></span>ViewPoint<span class="signature">(pos, angle)</span><span class="type-signature"> &rarr; {<a href="ViewPoint.html">ViewPoint</a>}</span>
                 
             
             <div class="container-source members">
                 <code><a href="linear-algebra-lib.js.html">linear-algebra-lib.js</a></code>,
-                <code><a href="linear-algebra-lib.js.html#line142">line 142</a></code>
+                <code><a href="linear-algebra-lib.js.html#line148">line 148</a></code>
             </div>
             
         </h4>
@@ -183,7 +183,7 @@
 
 
 
-<span class="param-type"><a href="PointView.html">PointView</a></span>
+<span class="param-type"><a href="ViewPoint.html">ViewPoint</a></span>
 
 
 
@@ -199,6 +199,81 @@
     
 
     
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>pos</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Vec.html">Vec</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">视点位置向量</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>angle</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">视线方向角度（弧度制）</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
 
 
 <dl class="details">
@@ -281,7 +356,7 @@
 <script src="scripts/linenumber.js"></script>
 
     <script>
-        var id = 'PointView_sub'.replace(/"/g, '_');
+        var id = 'ViewPoint_sub'.replace(/"/g, '_');
         var selectedApi = document.getElementById(id); // do not use jquery selector
         var $selectedApi = $(selectedApi);
 

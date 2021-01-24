@@ -34,7 +34,7 @@
         <ul></ul>
     </div>
     
-    <div class="lnb-api hidden"><h3>Classes</h3><ul><li><a href="PointView.html">PointView</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="PointView_sub"></div></li><li><a href="Ray.html">Ray</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="Ray_sub"><div class="member-type">Members</div><ul class="inner"><li><a href="Ray.html#begin">begin</a></li><li><a href="Ray.html#end">end</a></li></ul><div class="member-type">Methods</div><ul class="inner"><li><a href="Ray.html#.getRayFromPoints">getRayFromPoints</a></li><li><a href="Ray.html#intersection">intersection</a></li></ul></div></li><li><a href="Vec.html">Vec</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="Vec_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="Vec.html#add">add</a></li><li><a href="Vec.html#copy">copy</a></li><li><a href="Vec.html#mag">mag</a></li><li><a href="Vec.html#multi">multi</a></li><li><a href="Vec.html#sub">sub</a></li></ul></div></li></ul></div>
+    <div class="lnb-api hidden"><h3>Classes</h3><ul><li><a href="Ray.html">Ray</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="Ray_sub"><div class="member-type">Members</div><ul class="inner"><li><a href="Ray.html#begin">begin</a></li><li><a href="Ray.html#end">end</a></li></ul><div class="member-type">Methods</div><ul class="inner"><li><a href="Ray.html#.getRayFromPoints">getRayFromPoints</a></li><li><a href="Ray.html#intersection">intersection</a></li></ul></div></li><li><a href="Vec.html">Vec</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="Vec_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="Vec.html#add">add</a></li><li><a href="Vec.html#copy">copy</a></li><li><a href="Vec.html#mag">mag</a></li><li><a href="Vec.html#multi">multi</a></li><li><a href="Vec.html#sub">sub</a></li></ul></div></li><li><a href="ViewPoint.html">ViewPoint</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="ViewPoint_sub"></div></li></ul></div>
 </nav>
 <div id="resizer"></div>
 
@@ -48,6 +48,8 @@
         <article>
             <pre class="prettyprint source linenums"><code>/**
  * 向量类
+ * @prop {number} x 向量横坐标
+ * @prop {number} y 向量纵坐标
  */
 class Vec {
 
@@ -111,6 +113,8 @@ class Vec {
 
 /**
  * 线段类
+ * @prop {Vec} pos 线段起点的位置向量
+ * @prop {Vec} way 线段的方向向量
  */
 class Ray {
 
@@ -137,8 +141,8 @@ class Ray {
 
    /**
     * 线段起点的位置向量
-    * @accessors
-    * @return {Vec} 线段起点的位置向量
+    * @type {Vec}
+    * @readonly
     */
    get begin(){
      return this.pos;
@@ -146,8 +150,8 @@ class Ray {
 
    /**
     * 线段终点的位置向量
-    * @accessors
-    * @return {Vec} 线段终点的位置向量
+    * @type {Vec}
+    * @readonly
     */
    get end(){
      return this.pos.add(this.way);
@@ -186,14 +190,16 @@ class Ray {
 
 /**
  * 视点类
+ * @prop {Vec} pos 视点位置向量
+ * @prop {number} angle 视线方向角度（弧度制）
  */
-class PointView {
+class ViewPoint {
 
   /**
    * 构建视点对象
    * @param {Vec} pos 视点位置向量
    * @param {number} angle 视线方向角度（弧度制）
-   * @return {PointView} 视点对象
+   * @return {ViewPoint} 视点对象
    */
   constructor(pos, angle){
     this.pos = pos;

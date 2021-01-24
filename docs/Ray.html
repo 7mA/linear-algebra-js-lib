@@ -32,7 +32,7 @@
         <ul></ul>
     </div>
     
-    <div class="lnb-api hidden"><h3>Classes</h3><ul><li><a href="PointView.html">PointView</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="PointView_sub"></div></li><li><a href="Ray.html">Ray</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="Ray_sub"><div class="member-type">Members</div><ul class="inner"><li><a href="Ray.html#begin">begin</a></li><li><a href="Ray.html#end">end</a></li></ul><div class="member-type">Methods</div><ul class="inner"><li><a href="Ray.html#.getRayFromPoints">getRayFromPoints</a></li><li><a href="Ray.html#intersection">intersection</a></li></ul></div></li><li><a href="Vec.html">Vec</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="Vec_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="Vec.html#add">add</a></li><li><a href="Vec.html#copy">copy</a></li><li><a href="Vec.html#mag">mag</a></li><li><a href="Vec.html#multi">multi</a></li><li><a href="Vec.html#sub">sub</a></li></ul></div></li></ul></div>
+    <div class="lnb-api hidden"><h3>Classes</h3><ul><li><a href="Ray.html">Ray</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="Ray_sub"><div class="member-type">Members</div><ul class="inner"><li><a href="Ray.html#begin">begin</a></li><li><a href="Ray.html#end">end</a></li></ul><div class="member-type">Methods</div><ul class="inner"><li><a href="Ray.html#.getRayFromPoints">getRayFromPoints</a></li><li><a href="Ray.html#intersection">intersection</a></li></ul></div></li><li><a href="Vec.html">Vec</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="Vec_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="Vec.html#add">add</a></li><li><a href="Vec.html#copy">copy</a></li><li><a href="Vec.html#mag">mag</a></li><li><a href="Vec.html#multi">multi</a></li><li><a href="Vec.html#sub">sub</a></li></ul></div></li><li><a href="ViewPoint.html">ViewPoint</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="ViewPoint_sub"></div></li></ul></div>
 </nav>
 <div id="resizer"></div>
 
@@ -68,7 +68,7 @@
             
             <div class="container-source members">
                 <code><a href="linear-algebra-lib.js.html">linear-algebra-lib.js</a></code>,
-                <code><a href="linear-algebra-lib.js.html#line67">line 67</a></code>
+                <code><a href="linear-algebra-lib.js.html#line71">line 71</a></code>
             </div>
             
         </h4>
@@ -201,6 +201,81 @@
     
 
 
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>pos</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Vec.html">Vec</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">线段起点的位置向量</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>way</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Vec.html">Vec</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">线段的方向向量</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
 <dl class="details">
 
     
@@ -263,11 +338,11 @@
 
 <dt>
 <h4 class="name" id="begin">
-    <span class="type-signature"></span>begin<span class="type-signature"></span>
+    <span class="type-signature"><span class="icon green">readonly</span> </span>begin<span class="type-signature"> :<a href="Vec.html">Vec</a></span>
     
     <div class="container-source members">
         <code><a href="linear-algebra-lib.js.html">linear-algebra-lib.js</a></code>,
-        <code><a href="linear-algebra-lib.js.html#line95">line 95</a></code>
+        <code><a href="linear-algebra-lib.js.html#line99">line 99</a></code>
     </div>
     
 </h4>
@@ -282,6 +357,16 @@
     
 
     <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type"><a href="Vec.html">Vec</a></span>
+
+
+            </li>
+        </ul>
     
     -->
 
@@ -332,11 +417,11 @@
 
 <dt>
 <h4 class="name" id="end">
-    <span class="type-signature"></span>end<span class="type-signature"></span>
+    <span class="type-signature"><span class="icon green">readonly</span> </span>end<span class="type-signature"> :<a href="Vec.html">Vec</a></span>
     
     <div class="container-source members">
         <code><a href="linear-algebra-lib.js.html">linear-algebra-lib.js</a></code>,
-        <code><a href="linear-algebra-lib.js.html#line104">line 104</a></code>
+        <code><a href="linear-algebra-lib.js.html#line108">line 108</a></code>
     </div>
     
 </h4>
@@ -351,6 +436,16 @@
     
 
     <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type"><a href="Vec.html">Vec</a></span>
+
+
+            </li>
+        </ul>
     
     -->
 
@@ -414,7 +509,7 @@
             
             <div class="container-source members">
                 <code><a href="linear-algebra-lib.js.html">linear-algebra-lib.js</a></code>,
-                <code><a href="linear-algebra-lib.js.html#line86">line 86</a></code>
+                <code><a href="linear-algebra-lib.js.html#line90">line 90</a></code>
             </div>
             
         </h4>
@@ -597,7 +692,7 @@
             
             <div class="container-source members">
                 <code><a href="linear-algebra-lib.js.html">linear-algebra-lib.js</a></code>,
-                <code><a href="linear-algebra-lib.js.html#line113">line 113</a></code>
+                <code><a href="linear-algebra-lib.js.html#line117">line 117</a></code>
             </div>
             
         </h4>
