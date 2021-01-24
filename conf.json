@@ -1,6 +1,9 @@
 {
-    "opts": {
-        "template": "node_modules/tui-jsdoc-template",
-        "destination": "./docs/"
-    }
+  "opts": {
+    "template": "node_modules/tui-jsdoc-template",
+    "destination": "./docs/"
+  },
+  "templates": {
+    "name": "liner-algebra-js-lib API Docs"
+  }
 }
