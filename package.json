@@ -11,7 +11,8 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "docs": "rm -rf ./docs && jsdoc ./src README.md -c ./conf.json"
   },
   "repository": {
     "type": "git",
@@ -22,8 +23,5 @@
   "bugs": {
     "url": "https://github.com/7mA/linear-algebra-js-lib/issues"
   },
-  "homepage": "https://github.com/7mA/linear-algebra-js-lib#readme",
-  "scripts": {
-    "docs": "rm -rf docs && jsdoc ./src README.md -c ./conf.json"
-  }
+  "homepage": "https://github.com/7mA/linear-algebra-js-lib#readme"
 }
