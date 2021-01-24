@@ -12,3 +12,10 @@ Author: Kaku([@7mA](https://github.com/7mA))
 
 ## API文档
 [https://7ma.github.io/linear-algebra-js-lib/](https://7ma.github.io/linear-algebra-js-lib/)
+
+## 使用方法
+在HTML中添加下列语句：
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/linear-algebra-js-lib@1.0.0/src/linear-algebra-lib.js"></script>
+```

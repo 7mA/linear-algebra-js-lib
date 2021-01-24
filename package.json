@@ -1,0 +1,29 @@
+{
+  "name": "linear-algebra-js-lib",
+  "version": "1.0.0",
+  "description": "linear algebra JS library",
+  "main": "/src/linear-algebra-lib.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "dependencies": {
+    "tui-jsdoc-template": "^1.2.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/7mA/linear-algebra-js-lib.git"
+  },
+  "author": "7ma",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/7mA/linear-algebra-js-lib/issues"
+  },
+  "homepage": "https://github.com/7mA/linear-algebra-js-lib#readme",
+  "scripts": {
+    "docs": "rm -rf docs && jsdoc ./src README.md -c ./conf.json"
+  }
+}
