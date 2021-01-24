@@ -1,4 +1,4 @@
-# liner-algebra-lib-js
+# liner-algebra-js-lib
 Author: Kaku([@7mA](https://github.com/7mA))
 
 ## 概要
