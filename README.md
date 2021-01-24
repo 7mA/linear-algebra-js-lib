@@ -6,8 +6,12 @@ Author: Kaku([@7mA](https://github.com/7mA))
 
 ## Classes
 
+---
+
 ### Vec
 向量类。
+
+---
 
 #### Constructors
 
@@ -23,15 +27,17 @@ Author: Kaku([@7mA](https://github.com/7mA))
 
 **Returns** *Vec*
 
+---
+
 #### Properties
 
-**x**
-x: *number*
+**x:** *number*
 向量的横坐标。
 
-**y**
-y: *number*
+**y:** *number*
 向量的纵坐标。
+
+---
 
 #### Methods
 
@@ -46,6 +52,7 @@ y: *number*
 计算两个向量的和。
 **Returns** *Vec*
 
+
 **sub**
 
 > sub(b: *Vec*): *Vec*
@@ -57,12 +64,14 @@ y: *number*
 计算两个向量的差。
 **Returns** *Vec*
 
+
 **copy**
 
 > copy(): *Vec*
 
 复制当前向量。
 **Returns** *Vec*
+
 
 **multi**
 
@@ -75,12 +84,15 @@ y: *number*
 返回数与向量的乘积。
 **Returns** *Vec*
 
+
 **mag**
 
 > mag(): *number*
 
 返回向量的大小。
 **Returns** *number*
+
+---
 
 ### Ray
 线段类。
