@@ -13,9 +13,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "docs": "rm -rf ./docs && jsdoc ./src README.md -c ./conf.json",
-    "publish:patch": "sudo npm version patch && npm publish --registry http://registry.npmjs.org/",
-    "publish:minor": "sudo npm version minor && npm publish --registry http://registry.npmjs.org/",
-    "publish:major": "sudo npm version major && npm publish --registry http://registry.npmjs.org/"
+    "publish:patch": "npm version patch && npm publish --registry http://registry.npmjs.org/",
+    "publish:minor": "npm version minor && npm publish --registry http://registry.npmjs.org/",
+    "publish:major": "npm version major && npm publish --registry http://registry.npmjs.org/"
   },
   "repository": {
     "type": "git",
