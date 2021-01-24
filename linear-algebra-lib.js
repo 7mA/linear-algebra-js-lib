@@ -1,8 +1,13 @@
+/**
+ * 向量类
+ */
 class Vec {
 
   /**
-   * @param {number} x
-   * @param {number} y
+   * 构建向量对象
+   * @param {number} x 向量横坐标
+   * @param {number} y 向量纵坐标
+   * @return {Vec} 向量对象
    */
   constructor(x, y){
     this.x = x;
@@ -10,7 +15,9 @@ class Vec {
   }
 
   /**
-   * @param {Vec} b
+   * 计算两个向量的和
+   * @param {Vec} b 向量和运算对象
+   * @return {Vec} 向量的和
    */
   add(b){
     let a = this;
@@ -18,35 +25,52 @@ class Vec {
   }
 
   /**
-   * @param {Vec} b
+   * 计算两个向量的差
+   * @param {Vec} b 向量差运算对象
+   * @return {Vec} 向量的差
    */
   sub(b){
     let a = this;
     return new Vec(a.x - b.x, a.y - b.y);
   }
 
+  /**
+   * 获取向量的副本
+   * @return {Vec} 向量副本
+   */
   copy(){
     return new Vec(this.x, this.y);
   }
 
   /**
-   * @param {number} s
+   * 计算数与向量的积
+   * @param {number} s 数与向量的积运算对象
+   * @return {Vec} 数与向量的积
    */
   multi(s){
     return new Vec(s * this.x, s * this.y);
   }
 
+  /**
+   * 获取向量的大小
+   * @return {number} 向量大小
+   */
   mag(){
     return sqrt(this.x ** 2 + this.y ** 2);
   }
 
 }
 
+/**
+ * 线段类
+ */
 class Ray {
 
   /**
-   * @param {Vec} pos 起点向量
-   * @param {Vec} way 移动向量
+   * 构建线段对象
+   * @param {Vec} pos 线段起点的位置向量
+   * @param {Vec} way 线段的方向向量
+   * @return {Ray} 线段对象
    */
    constructor(pos, way){
      this.pos = pos;
@@ -54,23 +78,37 @@ class Ray {
    }
 
    /**
-    * @param {Vec} begin
-    * @param {Vec} end
+    * 通过两个点的位置向量构建线段
+    * @param {Vec} begin 线段起点的位置向量
+    * @param {Vec} end 线段终点的位置向量
+    * @return {Ray} 构建成的线段对象
     */
    static getRayFromPoints(begin, end){
      return new Ray(begin, end.sub(begin));
    }
 
+   /**
+    * 线段起点的位置向量
+    * @accessors
+    * @return {Vec} 线段起点的位置向量
+    */
    get begin(){
      return this.pos;
    }
 
+   /**
+    * 线段终点的位置向量
+    * @accessors
+    * @return {Vec} 线段终点的位置向量
+    */
    get end(){
      return this.pos.add(this.way);
    }
 
    /**
-    * @param {Ray} r2
+    * 获取两个线段焦点的位置向量
+    * @param {Ray} r2 相交运算对象线段
+    * @return {Vec | null} 两个线段焦点的位置向量，不相交的场合为null
     */
    intersection(r2){
      let r1 = this;
@@ -98,11 +136,16 @@ class Ray {
 
 }
 
+/**
+ * 视点类
+ */
 class PointView {
 
   /**
+   * 构建视点对象
    * @param {Vec} pos 视点位置向量
-   * @param {number} angle 视线方向角度
+   * @param {number} angle 视线方向角度（弧度制）
+   * @return {PointView} 视点对象
    */
   constructor(pos, angle){
     this.pos = pos;

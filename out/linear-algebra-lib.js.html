@@ -1,0 +1,233 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Source: linear-algebra-lib.js | Source: linear-algebra-lib.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-jsdoc.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/tui-doc.css">
+
+    
+</head>
+<body>
+<nav class="lnb" id="lnb">
+    <div class="logo" style="">
+        
+            <img src="img/toast-ui.png" width="100%" height="100%">
+        
+    </div>
+    <div class="title">
+        <h1><a href="index.html" class="link">Source: linear-algebra-lib.js</a></h1>
+        
+    </div>
+    <div class="search-container" id="search-container">
+        <input type="text" placeholder="Search">
+        <ul></ul>
+    </div>
+    
+    <div class="lnb-api hidden"><h3>Classes</h3><ul><li><a href="PointView.html">PointView</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="PointView_sub"></div></li><li><a href="Ray.html">Ray</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="Ray_sub"><div class="member-type">Members</div><ul class="inner"><li><a href="Ray.html#begin">begin</a></li><li><a href="Ray.html#end">end</a></li></ul><div class="member-type">Methods</div><ul class="inner"><li><a href="Ray.html#.getRayFromPoints">getRayFromPoints</a></li><li><a href="Ray.html#intersection">intersection</a></li></ul></div></li><li><a href="Vec.html">Vec</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="Vec_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="Vec.html#add">add</a></li><li><a href="Vec.html#copy">copy</a></li><li><a href="Vec.html#mag">mag</a></li><li><a href="Vec.html#multi">multi</a></li><li><a href="Vec.html#sub">sub</a></li></ul></div></li></ul></div>
+</nav>
+<div id="resizer"></div>
+
+<div class="main" id="main">
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * 向量类
+ */
+class Vec {
+
+  /**
+   * 构建向量对象
+   * @param {number} x 向量横坐标
+   * @param {number} y 向量纵坐标
+   * @return {Vec} 向量对象
+   */
+  constructor(x, y){
+    this.x = x;
+    this.y = y;
+  }
+
+  /**
+   * 计算两个向量的和
+   * @param {Vec} b 向量和运算对象
+   * @return {Vec} 向量的和
+   */
+  add(b){
+    let a = this;
+    return new Vec(a.x + b.x, a.y + b.y);
+  }
+
+  /**
+   * 计算两个向量的差
+   * @param {Vec} b 向量差运算对象
+   * @return {Vec} 向量的差
+   */
+  sub(b){
+    let a = this;
+    return new Vec(a.x - b.x, a.y - b.y);
+  }
+
+  /**
+   * 获取向量的副本
+   * @return {Vec} 向量副本
+   */
+  copy(){
+    return new Vec(this.x, this.y);
+  }
+
+  /**
+   * 计算数与向量的积
+   * @param {number} s 数与向量的积运算对象
+   * @return {Vec} 数与向量的积
+   */
+  multi(s){
+    return new Vec(s * this.x, s * this.y);
+  }
+
+  /**
+   * 获取向量的大小
+   * @return {number} 向量大小
+   */
+  mag(){
+    return sqrt(this.x ** 2 + this.y ** 2);
+  }
+
+}
+
+/**
+ * 线段类
+ */
+class Ray {
+
+  /**
+   * 构建线段对象
+   * @param {Vec} pos 线段起点的位置向量
+   * @param {Vec} way 线段的方向向量
+   * @return {Ray} 线段对象
+   */
+   constructor(pos, way){
+     this.pos = pos;
+     this.way = way;
+   }
+
+   /**
+    * 通过两个点的位置向量构建线段
+    * @param {Vec} begin 线段起点的位置向量
+    * @param {Vec} end 线段终点的位置向量
+    * @return {Ray} 构建成的线段对象
+    */
+   static getRayFromPoints(begin, end){
+     return new Ray(begin, end.sub(begin));
+   }
+
+   /**
+    * 线段起点的位置向量
+    * @accessors
+    * @return {Vec} 线段起点的位置向量
+    */
+   get begin(){
+     return this.pos;
+   }
+
+   /**
+    * 线段终点的位置向量
+    * @accessors
+    * @return {Vec} 线段终点的位置向量
+    */
+   get end(){
+     return this.pos.add(this.way);
+   }
+
+   /**
+    * 获取两个线段焦点的位置向量
+    * @param {Ray} r2 相交运算对象线段
+    * @return {Vec | null} 两个线段焦点的位置向量，不相交的场合为null
+    */
+   intersection(r2){
+     let r1 = this;
+     if(abs(r1.way.x) &lt; 0.01) r1.way.x = 0.01;
+     if(abs(r2.way.x) &lt; 0.01) r2.way.x = 0.01;
+     let t1 = r1.way.y / r1.way.x;
+     let t2 = r2.way.y / r2.way.x;
+     let x1 = r1.pos.x;
+     let x2 = r2.pos.x;
+     let y1 = r1.pos.y;
+     let y2 = r2.pos.y;
+     let sx = (t1 * x1 - t2 * x2 - y1 + y2) / (t1 - t2);
+     let sy = t1 * (sx - x1) + y1;
+     if(
+       sx > min(r1.begin.x, r1.end.x)
+       &amp;&amp; sx &lt; max(r1.begin.x, r1.end.x)
+       &amp;&amp; sx > min(r2.begin.x, r2.end.x)
+       &amp;&amp; sx &lt; max(r2.begin.x, r2.end.x)
+     ){
+       return new Vec(sx, sy);
+     } else{
+       return null;
+     }
+   }
+
+}
+
+/**
+ * 视点类
+ */
+class PointView {
+
+  /**
+   * 构建视点对象
+   * @param {Vec} pos 视点位置向量
+   * @param {number} angle 视线方向角度（弧度制）
+   * @return {PointView} 视点对象
+   */
+  constructor(pos, angle){
+    this.pos = pos;
+    this.angle = angle;
+  }
+
+}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<footer>
+    <img class="logo" src="img/toast-ui.png" style="">
+    <div class="footer-text">NHN Entertainment. Frontend Development Lab</div>
+</footer>
+<script>prettyPrint();</script>
+<script src="scripts/jquery.min.js"></script>
+<script src="scripts/tui-doc.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+    <script>
+        var id = '_sub'.replace(/"/g, '_');
+        var selectedApi = document.getElementById(id); // do not use jquery selector
+        var $selectedApi = $(selectedApi);
+
+        $selectedApi.removeClass('hidden');
+        $selectedApi.parent().find('.glyphicon').removeClass('glyphicon-plus').addClass('glyphicon-minus');
+        showLnbApi();
+    </script>
+
+</body>
+</html>
