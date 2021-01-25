@@ -17,5 +17,5 @@ Author: Kaku ([@7mA](https://github.com/7mA))
 在HTML中添加下列语句：
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/linear-algebra-js-lib@latest/src/linear-algebra-lib.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/linear-algebra-js-lib@1.1.3/src/linear-algebra-lib.min.js"></script>
 ```
