@@ -125,8 +125,11 @@ class Ray {
     */
    intersection(r2){
      let r1 = this;
+
+     // 近似化处理，以防除数过小导致t1、t2越界
      if(abs(r1.way.x) < 0.01) r1.way.x = 0.01;
      if(abs(r2.way.x) < 0.01) r2.way.x = 0.01;
+
      let t1 = r1.way.y / r1.way.x;
      let t2 = r2.way.y / r2.way.x;
      let x1 = r1.pos.x;
