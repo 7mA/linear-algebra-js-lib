@@ -6,6 +6,11 @@
   "directories": {
     "doc": "docs"
   },
+  "keywords": [
+    "linear algebra",
+    "javascript",
+    "class"
+  ],
   "dependencies": {
     "tui-jsdoc-template": "^1.2.2"
   },
