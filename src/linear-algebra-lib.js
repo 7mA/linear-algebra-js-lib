@@ -61,6 +61,15 @@ class Vec {
     return sqrt(this.x ** 2 + this.y ** 2);
   }
 
+  /**
+   * 移动向量
+   * @param {number} distance 移动距离
+   * @param {number} angle 移动角度
+   * @return {Vec} 移动以后的向量
+   */
+   move(distance, angle){
+     return this.add(new Vec(cos(angle), sin(angle)).multi(distance));
+   }
 }
 
 /**
