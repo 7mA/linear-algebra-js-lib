@@ -70,7 +70,12 @@ class Vec {
    * @readonly
    */
   get angle(){
-    return Math.arcsin(y / this.mag());
+    if(this.y > 0 || this.y == 0 &amp;&amp; this.x > 0){
+      return Math.acos(this.x / this.mag());
+    }
+    if(this.y &lt; 0 || this.y == 0 &amp;&amp; this.x &lt; 0){
+      return 2 * PI - Math.acos(this.x / this.mag());
+    }
   }
 
   /**
@@ -125,7 +130,7 @@ class Vec {
    * @return {Vec} 移动以后的向量
    */
   move(distance, angle){
-    return this.add(Vec.getUnitVectorFromAngle.multi(distance));
+    return this.add(Vec.getUnitVectorFromAngle(angle).multi(distance));
   }
 
   /**
@@ -260,7 +265,7 @@ class ViewPoint {
    * @readonly
    */
   get viewLineUnitVector(){
-    return Vec.getUnitVectorFromAngle(angle);
+    return Vec.getUnitVectorFromAngle(this.angle);
   }
 
 }
