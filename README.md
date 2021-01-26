@@ -1,4 +1,4 @@
-# liner-algebra-js-lib (latest version: v1.1.8)
+# liner-algebra-js-lib (latest version: v1.2.0)
 Author: Kaku ([@7mA](https://github.com/7mA))
 
 ## 概要
@@ -17,7 +17,7 @@ Author: Kaku ([@7mA](https://github.com/7mA))
 在HTML中添加下列语句：
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/linear-algebra-js-lib@1.1.8/src/linear-algebra-lib.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/linear-algebra-js-lib@1.2.0/src/linear-algebra-lib.min.js"></script>
 ```
 
 ## 源代码
@@ -25,8 +25,18 @@ Author: Kaku ([@7mA](https://github.com/7mA))
 
 ## 更新履历
 
+### v1.2.0 (2021/01/26)
+- Vec类
+  - 追加[angle取值器](https://7ma.github.io/linear-algebra-js-lib//Vec.html#angle)
+  - 更改[move方法](https://7ma.github.io/linear-algebra-js-lib/Vec.html#move)实现逻辑（接口规格无变化）
+  - 追加[getUnitVectorFromAngle静态方法](https://7ma.github.io/linear-algebra-js-lib/Vec.html#.getUnitVectorFromAngle)
+  - 追加[unitize方法](https://7ma.github.io/linear-algebra-js-lib/Vec.html#unitize)
+  - 追加[dotProduct方法](https://7ma.github.io/linear-algebra-js-lib/Vec.html#dotProduct)
+- ViewPoint类
+  - 追加[viewLineUnitVector取值器](https://7ma.github.io/linear-algebra-js-lib/ViewPoint.html#viewLineUnitVector)
+
 ### v1.1.0 (2021/01/25)
-- 追加[Vec类move函数](https://7ma.github.io/linear-algebra-js-lib/Vec.html#move)
+- 追加[Vec类move方法](https://7ma.github.io/linear-algebra-js-lib/Vec.html#move)
 
 ### v1.0.0 (2021/01/24)
 - 发布[库](https://www.npmjs.com/package/linear-algebra-js-lib)
