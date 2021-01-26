@@ -1,4 +1,4 @@
-# liner-algebra-js-lib (latest version: v1.2.0)
+# liner-algebra-js-lib (latest version: v1.2.2)
 Author: Kaku ([@7mA](https://github.com/7mA))
 
 ## 概要
@@ -17,7 +17,7 @@ Author: Kaku ([@7mA](https://github.com/7mA))
 在HTML中添加下列语句：
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/linear-algebra-js-lib@1.2.0/src/linear-algebra-lib.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/linear-algebra-js-lib@1.2.2/src/linear-algebra-lib.min.js"></script>
 ```
 
 ## 源代码
