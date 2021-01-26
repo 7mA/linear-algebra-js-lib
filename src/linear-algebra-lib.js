@@ -17,6 +17,20 @@ class Vec {
   }
 
   /**
+   * 方向角度
+   * @type {number}
+   * @readonly
+   */
+  get angle(){
+    if(this.y > 0 || this.y == 0 && this.x > 0){
+      return Math.acos(this.x / this.mag());
+    }
+    if(this.y < 0 || this.y == 0 && this.x < 0){
+      return 2 * PI - Math.acos(this.x / this.mag());
+    }
+  }
+
+  /**
    * 计算两个向量的和
    * @param {Vec} b 向量和运算对象
    * @return {Vec} 向量的和
@@ -67,9 +81,36 @@ class Vec {
    * @param {number} angle 移动角度
    * @return {Vec} 移动以后的向量
    */
-   move(distance, angle){
-     return this.add(new Vec(cos(angle), sin(angle)).multi(distance));
-   }
+  move(distance, angle){
+    return this.add(Vec.getUnitVectorFromAngle(angle).multi(distance));
+  }
+
+  /**
+   * 获取某个角度的单位向量
+   * @param {number} angle 角度（弧度制）
+   * @return {Vec} 单位向量
+   */
+  static getUnitVectorFromAngle(angle){
+    return new Vec(cos(angle), sin(angle));
+  }
+
+  /**
+   * 计算单位向量
+   * @return {Vec} 单位向量
+   */
+  unitize(){
+    return Vec.getUnitVectorFromAngle(this.angle);
+  }
+
+  /**
+   * 计算点积
+   * @param {Vec} b 点积运算对象
+   * @return {number} 点积结果
+   */
+  dotProduct(b){
+    let a = this;
+    return a.x * b.x + a.y * b.y;
+  }
 }
 
 /**
@@ -168,6 +209,15 @@ class ViewPoint {
   constructor(pos, angle){
     this.pos = pos;
     this.angle = angle;
+  }
+
+  /**
+   * 视线方向的单位向量
+   * @type {Vec}
+   * @readonly
+   */
+  get viewLineUnitVector(){
+    return Vec.getUnitVectorFromAngle(this.angle);
   }
 
 }

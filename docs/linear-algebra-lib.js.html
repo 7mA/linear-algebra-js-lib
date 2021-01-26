@@ -34,7 +34,7 @@
         <ul></ul>
     </div>
     
-    <div class="lnb-api hidden"><h3>Classes</h3><ul><li><a href="Ray.html">Ray</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="Ray_sub"><div class="member-type">Members</div><ul class="inner"><li><a href="Ray.html#begin">begin</a></li><li><a href="Ray.html#end">end</a></li></ul><div class="member-type">Methods</div><ul class="inner"><li><a href="Ray.html#.getRayFromPoints">getRayFromPoints</a></li><li><a href="Ray.html#intersection">intersection</a></li></ul></div></li><li><a href="Vec.html">Vec</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="Vec_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="Vec.html#add">add</a></li><li><a href="Vec.html#copy">copy</a></li><li><a href="Vec.html#mag">mag</a></li><li><a href="Vec.html#move">move</a></li><li><a href="Vec.html#multi">multi</a></li><li><a href="Vec.html#sub">sub</a></li></ul></div></li><li><a href="ViewPoint.html">ViewPoint</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="ViewPoint_sub"></div></li></ul></div>
+    <div class="lnb-api hidden"><h3>Classes</h3><ul><li><a href="Ray.html">Ray</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="Ray_sub"><div class="member-type">Members</div><ul class="inner"><li><a href="Ray.html#begin">begin</a></li><li><a href="Ray.html#end">end</a></li></ul><div class="member-type">Methods</div><ul class="inner"><li><a href="Ray.html#.getRayFromPoints">getRayFromPoints</a></li><li><a href="Ray.html#intersection">intersection</a></li></ul></div></li><li><a href="Vec.html">Vec</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="Vec_sub"><div class="member-type">Members</div><ul class="inner"><li><a href="Vec.html#angle">angle</a></li></ul><div class="member-type">Methods</div><ul class="inner"><li><a href="Vec.html#.getUnitVectorFromAngle">getUnitVectorFromAngle</a></li><li><a href="Vec.html#add">add</a></li><li><a href="Vec.html#copy">copy</a></li><li><a href="Vec.html#dotProduct">dotProduct</a></li><li><a href="Vec.html#mag">mag</a></li><li><a href="Vec.html#move">move</a></li><li><a href="Vec.html#multi">multi</a></li><li><a href="Vec.html#sub">sub</a></li><li><a href="Vec.html#unitize">unitize</a></li></ul></div></li><li><a href="ViewPoint.html">ViewPoint</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="ViewPoint_sub"><div class="member-type">Members</div><ul class="inner"><li><a href="ViewPoint.html#viewLineUnitVector">viewLineUnitVector</a></li></ul></div></li></ul></div>
 </nav>
 <div id="resizer"></div>
 
@@ -62,6 +62,20 @@ class Vec {
   constructor(x, y){
     this.x = x;
     this.y = y;
+  }
+
+  /**
+   * 方向角度
+   * @type {number}
+   * @readonly
+   */
+  get angle(){
+    if(this.y > 0 || this.y == 0 &amp;&amp; this.x > 0){
+      return Math.acos(this.x / this.mag());
+    }
+    if(this.y &lt; 0 || this.y == 0 &amp;&amp; this.x &lt; 0){
+      return 2 * PI - Math.acos(this.x / this.mag());
+    }
   }
 
   /**
@@ -115,9 +129,36 @@ class Vec {
    * @param {number} angle 移动角度
    * @return {Vec} 移动以后的向量
    */
-   move(distance, angle){
-     return this.add(new Vec(cos(angle), sin(angle)).multi(distance));
-   }
+  move(distance, angle){
+    return this.add(Vec.getUnitVectorFromAngle(angle).multi(distance));
+  }
+
+  /**
+   * 获取某个角度的单位向量
+   * @param {number} angle 角度（弧度制）
+   * @return {Vec} 单位向量
+   */
+  static getUnitVectorFromAngle(angle){
+    return new Vec(cos(angle), sin(angle));
+  }
+
+  /**
+   * 计算单位向量
+   * @return {Vec} 单位向量
+   */
+  unitize(){
+    return Vec.getUnitVectorFromAngle(this.angle);
+  }
+
+  /**
+   * 计算点积
+   * @param {Vec} b 点积运算对象
+   * @return {number} 点积结果
+   */
+  dotProduct(b){
+    let a = this;
+    return a.x * b.x + a.y * b.y;
+  }
 }
 
 /**
@@ -216,6 +257,15 @@ class ViewPoint {
   constructor(pos, angle){
     this.pos = pos;
     this.angle = angle;
+  }
+
+  /**
+   * 视线方向的单位向量
+   * @type {Vec}
+   * @readonly
+   */
+  get viewLineUnitVector(){
+    return Vec.getUnitVectorFromAngle(this.angle);
   }
 
 }

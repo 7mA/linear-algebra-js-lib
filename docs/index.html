@@ -32,7 +32,7 @@
         <ul></ul>
     </div>
     
-    <div class="lnb-api hidden"><h3>Classes</h3><ul><li><a href="Ray.html">Ray</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="Ray_sub"><div class="member-type">Members</div><ul class="inner"><li><a href="Ray.html#begin">begin</a></li><li><a href="Ray.html#end">end</a></li></ul><div class="member-type">Methods</div><ul class="inner"><li><a href="Ray.html#.getRayFromPoints">getRayFromPoints</a></li><li><a href="Ray.html#intersection">intersection</a></li></ul></div></li><li><a href="Vec.html">Vec</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="Vec_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="Vec.html#add">add</a></li><li><a href="Vec.html#copy">copy</a></li><li><a href="Vec.html#mag">mag</a></li><li><a href="Vec.html#move">move</a></li><li><a href="Vec.html#multi">multi</a></li><li><a href="Vec.html#sub">sub</a></li></ul></div></li><li><a href="ViewPoint.html">ViewPoint</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="ViewPoint_sub"></div></li></ul></div>
+    <div class="lnb-api hidden"><h3>Classes</h3><ul><li><a href="Ray.html">Ray</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="Ray_sub"><div class="member-type">Members</div><ul class="inner"><li><a href="Ray.html#begin">begin</a></li><li><a href="Ray.html#end">end</a></li></ul><div class="member-type">Methods</div><ul class="inner"><li><a href="Ray.html#.getRayFromPoints">getRayFromPoints</a></li><li><a href="Ray.html#intersection">intersection</a></li></ul></div></li><li><a href="Vec.html">Vec</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="Vec_sub"><div class="member-type">Members</div><ul class="inner"><li><a href="Vec.html#angle">angle</a></li></ul><div class="member-type">Methods</div><ul class="inner"><li><a href="Vec.html#.getUnitVectorFromAngle">getUnitVectorFromAngle</a></li><li><a href="Vec.html#add">add</a></li><li><a href="Vec.html#copy">copy</a></li><li><a href="Vec.html#dotProduct">dotProduct</a></li><li><a href="Vec.html#mag">mag</a></li><li><a href="Vec.html#move">move</a></li><li><a href="Vec.html#multi">multi</a></li><li><a href="Vec.html#sub">sub</a></li><li><a href="Vec.html#unitize">unitize</a></li></ul></div></li><li><a href="ViewPoint.html">ViewPoint</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="ViewPoint_sub"><div class="member-type">Members</div><ul class="inner"><li><a href="ViewPoint.html#viewLineUnitVector">viewLineUnitVector</a></li></ul></div></li></ul></div>
 </nav>
 <div id="resizer"></div>
 
@@ -55,7 +55,7 @@
 
 
     <section>
-        <article class="readme"><h1>liner-algebra-js-lib (latest version: v1.1.8)</h1>
+        <article class="readme"><h1>liner-algebra-js-lib (latest version: v1.2.0)</h1>
 <p>Author: Kaku (<a href="https://github.com/7mA">@7mA</a>)</p>
 <h2>概要</h2>
 <p>记述一些复用性比较高的与线性代数相关的JavaScript类与函数。</p>
@@ -69,14 +69,31 @@
 <p><a href="https://7ma.github.io/linear-algebra-js-lib/">https://7ma.github.io/linear-algebra-js-lib/</a></p>
 <h2>使用方法</h2>
 <p>在HTML中添加下列语句：</p>
-<pre class="prettyprint source lang-html"><code>&lt;script src=&quot;https://cdn.jsdelivr.net/npm/linear-algebra-js-lib@1.1.8/src/linear-algebra-lib.min.js&quot;>&lt;/script>
+<pre class="prettyprint source lang-html"><code>&lt;script src=&quot;https://cdn.jsdelivr.net/npm/linear-algebra-js-lib@1.2.0/src/linear-algebra-lib.min.js&quot;>&lt;/script>
 </code></pre>
 <h2>源代码</h2>
 <p><a href="https://github.com/7mA/linear-algebra-js-lib">https://github.com/7mA/linear-algebra-js-lib</a></p>
 <h2>更新履历</h2>
+<h3>v1.2.0 (2021/01/26)</h3>
+<ul>
+<li>Vec类
+<ul>
+<li>追加<a href="https://7ma.github.io/linear-algebra-js-lib//Vec.html#angle">angle取值器</a></li>
+<li>更改<a href="https://7ma.github.io/linear-algebra-js-lib/Vec.html#move">move方法</a>实现逻辑（接口规格无变化）</li>
+<li>追加<a href="https://7ma.github.io/linear-algebra-js-lib/Vec.html#.getUnitVectorFromAngle">getUnitVectorFromAngle静态方法</a></li>
+<li>追加<a href="https://7ma.github.io/linear-algebra-js-lib/Vec.html#unitize">unitize方法</a></li>
+<li>追加<a href="https://7ma.github.io/linear-algebra-js-lib/Vec.html#dotProduct">dotProduct方法</a></li>
+</ul>
+</li>
+<li>ViewPoint类
+<ul>
+<li>追加<a href="https://7ma.github.io/linear-algebra-js-lib/ViewPoint.html#viewLineUnitVector">viewLineUnitVector取值器</a></li>
+</ul>
+</li>
+</ul>
 <h3>v1.1.0 (2021/01/25)</h3>
 <ul>
-<li>追加<a href="https://7ma.github.io/linear-algebra-js-lib/Vec.html#move">Vec类move函数</a></li>
+<li>追加<a href="https://7ma.github.io/linear-algebra-js-lib/Vec.html#move">Vec类move方法</a></li>
 </ul>
 <h3>v1.0.0 (2021/01/24)</h3>
 <ul>
